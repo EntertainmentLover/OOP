@@ -133,3 +133,189 @@ Generated email: john.doe@gmail.com
 Generated password: A1b@9kLm2
 Enter birthday: 2000-05-15
 User added!
+
+
+
+# Fifth activity: Electronic Device Shopping Cart
+## Project Overview
+This project is a console-based shopping cart system for an electronic device store. It demonstrates Object-Oriented Programming concepts in Python, especially **inheritance**.
+The store contains three device categories:
+- Smartphone
+- Laptop
+- Tablet
+Each category inherits common features from the base class `Device`, while also adding its own specific attributes and methods.
+
+## Features
+- Display all available devices
+- Add devices to cart
+- Remove devices from cart
+- Checkout and reduce stock
+- Apply discounts to devices
+- Print cart items and total price
+- Use inheritance with subclasses
+- Includes unit tests
+
+## Classes
+### 1. Device
+Base class for all electronic devices.
+**Attributes:**
+- `name`
+- `price`
+- `stock`
+- `warranty_period`
+**Methods:**
+- `display_info()`
+- `__str__()`
+- `apply_discount(discount_percentage)`
+- `is_available(amount)`
+- `reduce_stock(amount)`
+
+### 2. Smartphone(Device)
+**Extra attributes:**
+- `screen_size`
+- `battery_life`
+**Extra methods:**
+- `make_call()`
+- `install_app()`
+
+### 3. Laptop(Device)
+**Extra attributes:**
+- `ram_size`
+- `processor_speed`
+**Extra methods:**
+- `run_program()`
+- `use_keyboard()`
+
+### 4. Tablet(Device)
+**Extra attributes:**
+- `screen_resolution`
+- `weight`
+**Extra methods:**
+- `browse_internet()`
+- `use_touchscreen()`
+
+### 5. Cart
+Manages the shopping cart.
+**Methods:**
+- `add_device(device, amount)`
+- `remove_device(device, amount)`
+- `get_total_price()`
+- `print_items()`
+- `checkout()`
+
+## How to Run
+1. Make sure Python 3 is installed.
+2. Open terminal in the project folder.
+3. Run the program:
+```bash
+python fifth_ass.py
+```
+
+## How to Run Tests
+```bash
+python -m unittest test_fifth.py
+```
+
+## Sample Input / Output
+### Sample Run 1
+```text
+=== Electronic Device Store ===
+1. Show Devices
+2. Show Cart
+3. Remove Item From Cart
+4. Checkout
+5. Exit
+Select an option: 1
+
+--- Available Devices ---
+1. Smartphone -> iPhone 15 | Price: $999.00 | Stock: 10 | Warranty: 12 months | Screen: 6.1" | Battery: 20h
+2. Smartphone -> Samsung Galaxy S24 | Price: $899.00 | Stock: 8 | Warranty: 24 months | Screen: 6.2" | Battery: 22h
+...
+
+Enter device number to add to cart (or b to go back): 1
+How many iPhone 15 do you want to add? 2
+Added 2 x iPhone 15 to cart.
+```
+
+### Sample Run 2
+```text
+=== Electronic Device Store ===
+1. Show Devices
+2. Show Cart
+3. Remove Item From Cart
+4. Checkout
+5. Exit
+Select an option: 2
+
+--- Cart Items ---
+1. iPhone 15 | Qty: 2 | Unit Price: $999.00 | Subtotal: $1998.00
+Total Price: $1998.00
+```
+
+### Sample Run 3
+```text
+=== Electronic Device Store ===
+1. Show Devices
+2. Show Cart
+3. Remove Item From Cart
+4. Checkout
+5. Exit
+Select an option: 4
+
+--- Receipt ---
+iPhone 15 x 2 = $1998.00
+Final Total: $1998.00
+Thank you for your purchase!
+```
+
+## UML Class Diagram
++----------------+
+|     Device     |
++----------------+
+| name           |
+| price          |
+| stock          |
+| warranty_period|
++----------------+
+| display_info() |
+| __str__()      |
+| apply_discount()|
+| is_available() |
+| reduce_stock() |
++----------------+
+        ^
+        |
+  -------------------------------
+  |             |               |
+  |             |               |
++-------------+ +-------------+ +-------------+
+| Smartphone  | |   Laptop    | |   Tablet    |
++-------------+ +-------------+ +-------------+
+| screen_size | | ram_size    | | screen_resolution |
+| battery_life| | processor_speed | | weight    |
++-------------+ +-------------+ +-------------+
+| make_call() | | run_program()| | browse_internet() |
+| install_app()| | use_keyboard()| | use_touchscreen() |
++-------------+ +-------------+ +-------------+
+
++----------------+
+|      Cart      |
++----------------+
+| items          |
++----------------+
+| add_device()   |
+| remove_device()|
+| get_total_price() |
+| print_items()  |
+| checkout()     |
++----------------+
+
+## Files Included
+- `fifth_ass.py`
+- `test_fifth.py`
+- `README.md`
+
+## Notes
+- The project includes more than 20 devices.
+- Inheritance is used correctly.
+- Stock is updated only after successful checkout.
