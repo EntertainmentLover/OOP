@@ -268,48 +268,6 @@ Final Total: $1998.00
 Thank you for your purchase!
 ```
 
-## UML Class Diagram
-+----------------+
-|     Device     |
-+----------------+
-| name           |
-| price          |
-| stock          |
-| warranty_period|
-+----------------+
-| display_info() |
-| __str__()      |
-| apply_discount()|
-| is_available() |
-| reduce_stock() |
-+----------------+
-        ^
-        |
-  -------------------------------
-  |             |               |
-  |             |               |
-+-------------+ +-------------+ +-------------+
-| Smartphone  | |   Laptop    | |   Tablet    |
-+-------------+ +-------------+ +-------------+
-| screen_size | | ram_size    | | screen_resolution |
-| battery_life| | processor_speed | | weight    |
-+-------------+ +-------------+ +-------------+
-| make_call() | | run_program()| | browse_internet() |
-| install_app()| | use_keyboard()| | use_touchscreen() |
-+-------------+ +-------------+ +-------------+
-
-+----------------+
-|      Cart      |
-+----------------+
-| items          |
-+----------------+
-| add_device()   |
-| remove_device()|
-| get_total_price() |
-| print_items()  |
-| checkout()     |
-+----------------+
-
 ## Files Included
 - `fifth_ass.py`
 - `test_fifth.py`
