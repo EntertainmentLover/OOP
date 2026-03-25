@@ -277,3 +277,146 @@ Thank you for your purchase!
 - The project includes more than 20 devices.
 - Inheritance is used correctly.
 - Stock is updated only after successful checkout.
+
+
+
+
+
+# Sixth activity: BMI Calculator (PyQt)
+## Objective
+A simple BMI Calculator desktop application built with PyQt5. The user enters weight, height, and unit type (`metric` or `imperial`), then the app calculates BMI and shows the BMI status.
+
+## Features
+- Input for weight
+- Input for height
+- Input for units (`metric` or `imperial`)
+- Calculate BMI button
+- BMI result label
+- BMI status label
+- Menu bar:
+  - **File > Clear** clears all fields
+  - **File > Exit** closes the app
+  - **Help > How to Use** shows usage instructions
+
+## BMI Formula
+### Metric
+BMI = weight(kg) / height(m)^2
+### Imperial
+BMI = 703 * weight(lb) / height(in)^2
+## BMI Status
+- Underweight: less than 18.5
+- Normal: 18.5 to less than 25
+- Overweight: 25 to less than 30
+- Obese: 30 or greater
+
+## Files
+- `sixth_ass.py` - main application source code
+
+## How to Run
+1. Install Python 3
+2. Install PyQt6:
+```bash
+pip install PyQt6
+```
+3. Run the application:
+```bash
+python sixth_ass.py
+```
+
+## Example Sample Runs
+### Example 1
+Input:
+- Weight: 70
+- Height: 1.75
+- Unit: metric
+Output:
+- BMI: 22.86
+- Status: Normal
+
+### Example 2
+Input:
+- Weight: 45
+- Height: 1.70
+- Unit: metric
+Output:
+- BMI: 15.57
+- Status: Underweight
+
+### Example 3
+Input:
+- Weight: 190
+- Height: 68
+- Unit: imperial
+Output:
+- BMI: 28.89
+- Status: Overweight
+
+## Classes and Methods
+### `BMICalculator(QWidget)`
+Main window of the BMI calculator.
+
+#### Methods
+- `init_ui()` - creates all interface widgets and layouts
+- `create_menu()` - creates menu bar with File and Help menus
+- `calculate_bmi()` - calculates BMI from user input
+- `get_bmi_status(bmi)` - returns BMI status text
+- `clear_fields()` - clears all fields and labels
+- `show_help()` - displays usage instructions
+
+
+# Seventh activity: Calculator (PyQt, MVC)
+## Description
+This project is a modern calculator application built with **Python** and **PyQt6**, following the **Model-View-Controller (MVC)** design pattern. It supports basic arithmetic operations and includes a **calculation history panel**, similar to real-world calculators.
+
+## Architecture (MVC)
+### Model — `Calculator`
+Handles all core logic:
+- Stores the mathematical expression
+- Performs calculations
+- Handles errors (e.g., division by zero)
+
+### View + Controller — `CalculatorWindow`
+- Displays the graphical interface
+- Handles user interactions (button clicks)
+- Communicates with the Model
+- Manages calculation history
+
+## Features:
+- "+" Addition  
+- "-" Subtraction  
+- "*" Multiplication  
+- "/" Division  
+- Clear button (C)  
+- "<-" Delete last character  
+- Error handling (Invalid input)
+- Calculation history (like real calculators)  
+- Continue calculations from previous result  
+- Modern dark UI  
+
+## History Feature:
+The calculator includes a **history panel** on the right side:
+- Displays previous calculations (e.g., `2+2 = 4`)
+- Automatically updates after each calculation
+- Helps track previous results
+
+## How to Run
+### 1. Install Python
+Make sure Python 3.10+ is installed.
+### 2. Install dependencies: bash
+pip install PyQt6
+### 3. Run the program:
+python seventh_activity.py
+
+## Project Structure:
+calculator.py   # Main file (Model + View + Controller)
+README.md       # Documentation
+
+## Sample Input/Output:
+| Input  | Output                |
+| ------ | --------------------- |
+| 2 + 3  | 5                     |
+| 10 / 2 | 5                     |
+| 5 * 6  | 30                    |
+| 9 - 4  | 5                     |
+| 5 / 0  | Cannot divide by zero |
+
